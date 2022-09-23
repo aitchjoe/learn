@@ -1,7 +1,7 @@
 package shift
 
 func Shift(s string, shift [][2]int) string {
-	if s == "" || len(shift) == 0 {
+	if s == "" {
 		return ""
 	}
 	amount := 0

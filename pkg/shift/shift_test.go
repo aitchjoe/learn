@@ -28,10 +28,20 @@ func TestShift2(t *testing.T) {
 	}
 }
 
-func TestShiftEmpty(t *testing.T) {
+func TestShiftEmpty1(t *testing.T) {
 	s := ""
 	shift := [][2]int{{0, 1}, {1, 2}}
 	want := ""
+	result := Shift(s, shift)
+	if result != want {
+		t.Fatalf(`Shift("%q, %v") = %q, want %q`, s, shift, result, want)
+	}
+}
+
+func TestShiftEmpty2(t *testing.T) {
+	s := "0"
+	shift := [][2]int{}
+	want := "0"
 	result := Shift(s, shift)
 	if result != want {
 		t.Fatalf(`Shift("%q, %v") = %q, want %q`, s, shift, result, want)
